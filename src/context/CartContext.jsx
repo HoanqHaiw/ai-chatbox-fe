@@ -4,10 +4,10 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // ✅ trạng thái sidebar
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    // ➕ Thêm sản phẩm
-    const addToCart = (product, quantity = 1, showSidebar = true) => {
+    // ➕ Thêm sản phẩm & mở sidebar
+    const addToCart = (product, quantity = 1) => {
         setCartItems((prev) => {
             const existing = prev.find((item) => item.id === product.id);
             if (existing) {
@@ -20,8 +20,7 @@ export const CartProvider = ({ children }) => {
                 return [...prev, { ...product, quantity }];
             }
         });
-
-        if (showSidebar) setIsSidebarOpen(true); // ✅ chỉ mở khi được phép
+        setIsSidebarOpen(true);
     };
 
     // ➖ Giảm số lượng

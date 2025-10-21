@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../scss/home.scss";
 
 // banner — chỉ 1 ảnh duy nhất
-import banner from "../assets/panel/bannel1.jpg";
+import banner from "../assets/img/ads1.jpg";
 
 // img sản phẩm
 import product1 from "../assets/img/img1.jpg";

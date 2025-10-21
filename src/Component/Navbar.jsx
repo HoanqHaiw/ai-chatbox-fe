@@ -19,7 +19,7 @@ function Navbar() {
         <nav className={`navbar navbar-expand-lg navbar-dark bg-dark fixed-top ${scrolled ? "navbar-shrink" : ""}`}>
             <div className="container-fluid px-4">
                 <Link className="navbar-brand fw-bold" to="/">
-                    LONELY STONIE
+                    DOANTONG OUTLET
                 </Link>
                 <button
                     className="navbar-toggler"

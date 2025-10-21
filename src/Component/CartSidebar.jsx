@@ -1,81 +1,87 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../scss/cartSidebar.scss";
 
-function CartSidebar() {
+const CartSidebar = () => {
     const {
-        isSidebarOpen,
-        closeSidebar,
         cartItems,
-        removeFromCart,
-        subtotal,
         decreaseQuantity,
         addToCart,
+        removeFromCart,
+        subtotal,
+        isSidebarOpen,
+        closeSidebar,
     } = useCart();
-
-    const location = useLocation();
-    if (location.pathname === "/cart") return null; // ✅ không hiển thị ở trang /cart
 
     return (
         <>
+            {/* Overlay mờ nền */}
             <div
                 className={`cart-overlay ${isSidebarOpen ? "show" : ""}`}
                 onClick={closeSidebar}
             ></div>
 
+            {/* Sidebar */}
             <div className={`cart-sidebar ${isSidebarOpen ? "open" : ""}`}>
-                <div className="cart-header">
-                    <h5>Giỏ hàng của bạn</h5>
-                    <button className="btn-close" onClick={closeSidebar}></button>
+                <div className="sidebar-header">
+                    <h5>Giỏ hàng</h5>
+                    <button onClick={closeSidebar} className="close-btn">×</button>
                 </div>
 
-                <div className="cart-body">
-                    {cartItems.length === 0 ? (
-                        <p>Chưa có sản phẩm nào.</p>
-                    ) : (
-                        cartItems.map((item) => (
-                            <div className="cart-item" key={item.id}>
-                                <img src={item.image || item.images?.[0]} alt={item.name} />
-                                <div className="item-info">
-                                    <p className="item-name">{item.name}</p>
-                                    <p className="item-price">{item.price}₫</p>
-                                    <div className="quantity-controls">
+                {cartItems.length === 0 ? (
+                    <p className="empty">Giỏ hàng trống</p>
+                ) : (
+                    <div className="sidebar-content">
+                        <div className="sidebar-header">
+                            <p>CART</p>
+                            <button
+                                className="sibar-exit"
+                                onClick={closeSidebar}
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        {cartItems.map((item) => (
+                            <div key={item.id} className="cart-item">
+                                <img src={item.image} alt={item.name} />
+                                <div className="info">
+                                    <h6>{item.name}</h6>
+                                    <p>{item.price.toLocaleString()}₫</p>
+                                    <div className="quantity">
                                         <button onClick={() => decreaseQuantity(item.id)}>-</button>
                                         <span>{item.quantity}</span>
-                                        <button onClick={() => addToCart(item, 1, false)}>+</button>
+                                        <button onClick={() => addToCart(item)}>+</button>
                                     </div>
                                 </div>
                                 <button
-                                    className="btn-remove"
+                                    className="remove"
                                     onClick={() => removeFromCart(item.id)}
                                 >
-                                    ×
+                                    Xoá
                                 </button>
                             </div>
-                        ))
-                    )}
-                </div>
-
-                {cartItems.length > 0 && (
-                    <div className="cart-footer">
-                        <div className="subtotal">
-                            <span>Tạm tính:</span>
-                            <strong>{subtotal.toLocaleString()}₫</strong>
-                        </div>
-                        <div className="cart-actions">
-                            <Link to="/cart" className="btn btn-outline-dark" onClick={closeSidebar}>
-                                Xem giỏ hàng
-                            </Link>
-                            <Link to="/checkout" className="btn btn-primary" onClick={closeSidebar}>
-                                Thanh toán
-                            </Link>
-                        </div>
+                        ))}
                     </div>
                 )}
+
+                <div className="sidebar-footer">
+                    <div className="subtotal">
+                        <span>Tạm tính:</span>
+                        <strong>{subtotal.toLocaleString()}₫</strong>
+                    </div>
+                    <div className="actions">
+                        <Link to="/cart" onClick={closeSidebar} className="view-cart">
+                            Xem Giỏ Hàng
+                        </Link>
+                        <Link to="/checkout" onClick={closeSidebar} className="checkout">
+                            Thanh Toán
+                        </Link>
+                    </div>
+                </div>
             </div>
         </>
     );
-}
+};
 
 export default CartSidebar;

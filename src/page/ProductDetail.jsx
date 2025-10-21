@@ -29,7 +29,7 @@ const ProductDetail = () => {
     const [quantity, setQuantity] = useState(1);
 
     const handleAddToCart = () => {
-        addToCart(product, quantity, true); // ✅ mở sidebar khi thêm
+        addToCart(product, quantity, true);
     };
 
     return (

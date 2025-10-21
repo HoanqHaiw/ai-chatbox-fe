@@ -20,3 +20,12 @@
 .navbar .nav-link:hover {
     color: #fff !important;
 }
+
+.container-fluid {
+    font-size: var(--bs-navbar-brand-font-size);
+}
+
+.px-4 {
+    padding-right: 7.5rem !important;
+    padding-left: 7.5rem !important;
+}

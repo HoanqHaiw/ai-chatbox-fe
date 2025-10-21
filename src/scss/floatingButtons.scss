@@ -1,0 +1,10 @@
+.floating-buttons {
+    position: fixed;
+    right: 25px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; // khoảng cách giữa ChatBox và PhoneRing
+    z-index: 9999;
+}
