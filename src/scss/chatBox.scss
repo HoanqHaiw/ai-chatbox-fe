@@ -1,7 +1,5 @@
 .chatbox-container {
-    position: fixed;
-    bottom: 20px;
-    right: 25px;
+    position: relative;
     z-index: 9998;
 
     .chatbox-toggle {

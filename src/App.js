@@ -11,11 +11,11 @@ import About from "./page/About";
 import Footer from "./Component/Footer";
 import { CartProvider } from "./context/CartContext";
 import CartSidebar from "./Component/CartSidebar";
-import PhoneRing from "./Component/PhoneRing"; // 👈 thêm component điện thoại
+import PhoneRing from "./Component/PhoneRing";
 import ChatBox from "./Component/Chatbox";
 import "./scss/app.scss";
 import "./scss/cartSidebar.scss";
-import "./scss/phoneRing.scss"; // 👈 import SCSS của hiệu ứng gọi điện
+import "./scss/phoneRing.scss";
 import "./scss/floatingButtons.scss";
 
 
@@ -43,8 +43,8 @@ function App() {
 
           <Footer />
           <div className="floating-buttons">
-            <ChatBox />
             <PhoneRing />
+            <ChatBox />
           </div>
         </div>
       </BrowserRouter>

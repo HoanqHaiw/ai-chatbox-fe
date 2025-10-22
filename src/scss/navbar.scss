@@ -29,3 +29,10 @@
     padding-right: 7.5rem !important;
     padding-left: 7.5rem !important;
 }
+
+.container {
+    max-width: 1400px;
+    /* 👈 khớp 100% với phần trên */
+    margin: 0 auto;
+    padding: 0 30px;
+}

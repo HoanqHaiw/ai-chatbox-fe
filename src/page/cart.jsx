@@ -49,6 +49,10 @@ const Cart = () => {
                             <label>Số điện thoại</label>
                             <input type="text" className="form-control" required />
                         </div>
+                        <div className="mb-3">
+                            <label>Email</label>
+                            <input type="text" className="form-control" required />
+                        </div>
                         <div className="mt-4">
                             <p>Tổng tiền: <strong>{subtotal.toLocaleString()}₫</strong></p>
                             <button className="btn btn-success w-100">Đặt hàng</button>

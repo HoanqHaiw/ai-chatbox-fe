@@ -4,6 +4,7 @@ import "../scss/home.scss";
 
 // banner — chỉ 1 ảnh duy nhất
 import banner from "../assets/img/ads1.jpg";
+import banner2 from "../assets/img/ads2.avif";
 
 // img sản phẩm
 import product1 from "../assets/img/img1.jpg";
@@ -40,12 +41,13 @@ function Home() {
 
     return (
         <div className="home-page">
-            {/* PHẦN 1: Banner */}
             <div className="banner-full">
                 <img src={banner} alt="banner" />
             </div>
+            <div className="banner-full">
+                <img src={banner2} alt="banner" />
+            </div>
 
-            {/* PHẦN 2: Grid sản phẩm */}
             <div className="container mt-5">
                 <h2 className="mb-4 text-center">Sản phẩm nổi bật</h2>
                 <div className="row row-cols-1 row-cols-md-4 g-4 fade-in">
