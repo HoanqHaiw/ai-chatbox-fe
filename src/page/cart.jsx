@@ -50,6 +50,10 @@ const Cart = () => {
                             <input type="text" className="form-control" required />
                         </div>
                         <div className="mb-3">
+                            <label>Mã Giảm Giá</label>
+                            <input type="text" className="form-control" />
+                        </div>
+                        <div className="mb-3">
                             <label>Email</label>
                             <input type="text" className="form-control" required />
                         </div>

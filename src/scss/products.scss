@@ -1,27 +1,28 @@
-/* ---------- LAYOUT CHUNG ---------- */
+/* ---------- LAYOUT ---------- */
 .products-page {
     padding-top: 40px;
 
     .container {
-        max-width: 1200px;
-        /* 👈 cùng độ rộng với phần header */
-        margin: 0 auto;
-        /* 👈 căn giữa */
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
         display: flex;
         align-items: flex-start;
         gap: 30px;
-        padding: 0 15px;
-        /* 👈 vừa đủ khoảng cách 2 bên */
+        // padding-left: 9 rem;
+        // padding-right: 7.5rem;
+
         box-sizing: border-box;
     }
 }
 
+
 /* ---------- SIDEBAR ---------- */
 .sidebar {
-    flex: 0 0 230px; // 👈 cố định chiều rộng sidebar, không thay đổi khi zoom
+    flex: 0 0 230px;
     background-color: #fafafa;
     border-radius: 10px;
-    padding: 20px 25px;
+    padding: 12px 25px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 90px;
@@ -74,7 +75,7 @@
 
 /* ---------- MAIN CONTENT ---------- */
 .products-content {
-    flex: 1; // 👈 chiếm phần còn lại, co giãn linh hoạt
+    flex: 1;
 
     .top-bar {
         display: flex;
@@ -125,10 +126,10 @@
     }
 }
 
-/* ---------- GRID SẢN PHẨM ---------- */
+/* ---------- GRID  ---------- */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
     /* 👈 5 sp/hàng, không co */
     gap: 25px;
     justify-content: space-between;
@@ -146,7 +147,6 @@
     display: flex;
     flex-direction: column;
     height: 360px;
-    /* 👈 cố định chiều cao đồng đều */
 }
 
 .product-grid .card:hover {
@@ -154,7 +154,7 @@
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Ảnh sản phẩm */
+
 .product-grid .card-img-top {
     width: 100%;
     height: 220px;
@@ -162,7 +162,7 @@
     border-bottom: 1px solid #eee;
 }
 
-/* Tên & giá */
+
 .card-body {
     flex: 1;
     display: flex;
@@ -184,7 +184,7 @@
     }
 }
 
-/* Nút thêm vào giỏ hàng */
+
 .add-to-cart-btn {
     background-color: #111;
     color: #fff;

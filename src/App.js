@@ -17,7 +17,8 @@ import "./scss/app.scss";
 import "./scss/cartSidebar.scss";
 import "./scss/phoneRing.scss";
 import "./scss/floatingButtons.scss";
-
+import Collections from "./page/Collections";
+import CollectionDetail from "./page/CollectionDetail";
 
 function App() {
   return (
@@ -34,9 +35,11 @@ function App() {
                 <Route path="/products" element={<Products />} />
                 <Route path="/products/:id" element={<ProductDetail />} />
                 <Route path="/cart" element={<Cart />} />
+                <Route path="/collections" element={<Collections />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/collections/:id" element={<CollectionDetail />} />
               </Routes>
             </div>
           </main>
